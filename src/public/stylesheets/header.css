@@ -1,0 +1,39 @@
+.button-header {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 16px;
+  background: #3f3e77;
+  border: 1px solid #3f3e77;
+  border-radius: 10px;
+}
+
+section header h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+
+  margin-bottom: 1.6rem;
+}
+
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+
+  color: var(--headline);
+}
+
+section header h1 {
+  font-size: 3.4rem;
+  color: var(--headline);
+  line-height: 130%;
+
+  margin-bottom: 2.4rem;
+}

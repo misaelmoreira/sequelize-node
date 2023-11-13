@@ -1,44 +1,31 @@
-<!-- user-list.ejs -->
+<%- include('../shared/header') %>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Lista de Usuários</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="mt-5">Lista de Usuários</h1>
-      <a href="/users/create" class="btn btn-primary mt-3">Criar Novo Usuário</a>
-      <table class="table mt-3">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Senha</th> 
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% users.forEach(function(user) { %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <td><%= user.password_hash %></td> <!-- Exiba o campo password_hash -->
-            <td>
-                <a href="/users/delete/<%= user.id %>" class="btn btn-danger">Excluir Usuário</a>
-                <a href="/users/edit/<%= user.id %>" class="btn btn-primary">Alterar</a>
-            </td>
-          </tr>
-          <% }); %>
-        </tbody>
-      </table>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    
-  </body>
-</html>
+<section class="container">
+  <h1 class="mt-5">Lista de Usuários</h1>
+  <a href="/users/create" class="btn btn-primary mt-3">Criar Novo Usuário</a>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Senha</th> 
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(function(user) { %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.password_hash %></td> <!-- Exiba o campo password_hash -->
+        <td>
+            <a href="/users/delete/<%= user.id %>" class="btn btn-danger">Excluir Usuário</a>
+            <a href="/users/edit/<%= user.id %>" class="btn btn-primary">Alterar</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</section>
+
+<%- include('../shared/footer') %>

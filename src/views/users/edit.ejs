@@ -1,41 +1,50 @@
-<!-- delete-confirmation.ejs -->
+<%- include('../shared/header') %>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Editar Usuário</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <% if(msg.erro) { %>
-            <div class="container">
-                <h1 class="mt-5">Mensagem de Erro</h1>
-                <div class="alert alert-danger mt-3">
-                    <strong>Erro!</strong> <%= msg.erro %>
-                </div>
-            </div>
-        <% } %>        
-
-        <h1>Editar Usuário</h1>
-        <form action="/users/edit/<%= user.id %>" method="POST">
-            <div class="mb-3">
-                <label for="name" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="name" name="name" value="<%= user.name %>">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail:</label>
-                <input type="email" class="form-control" id="email" name="email" value="<%= user.email %>">
-            </div>
-            <div class="mb-3">
-                <label for="password_hash" class="form-label">Senha:</label>
-                <input type="password" class="form-control" id="password_hash" name="password_hash" value="<%= user.password_hash %>">
-            </div>
-            <button type="submit" class="btn btn-primary">Alterar Usuário</button>
-            <a href="/users" class="btn btn-secondary">Cancelar</a>
-        </form>
+<div class="container">
+  <% if(msg.erro) { %>
+  <div class="container">
+    <h1 class="mt-5">Mensagem de Erro</h1>
+    <div class="alert alert-danger mt-3">
+      <strong>Erro!</strong> <%= msg.erro %>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+  </div>
+  <% } %>
+
+  <h1>Editar Usuário</h1>
+  <form action="/users/edit/<%= user.id %>" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        value="<%= user.name %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail:</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        value="<%= user.email %>"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password_hash" class="form-label">Senha:</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password_hash"
+        name="password_hash"
+        value="<%= user.password_hash %>"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Alterar Usuário</button>
+    <a href="/users" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+
+<%- include('../shared/footer') %>
